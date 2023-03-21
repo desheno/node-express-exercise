@@ -5,6 +5,10 @@ const app = express();
 
 const API_URL = 'https://mocki.io/v1/28378ac3-4d7d-428a-9418-70354eeb86ef';
 
+app.get('/', async (req, res) => {
+	res.send('Hello there!');
+});
+
 app.get('/show', async (req, res) => {
   try {
     const response = await axios.get(API_URL);
