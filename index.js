@@ -5,9 +5,11 @@ const app = express();
 
 const API_URL = 'https://mocki.io/v1/28378ac3-4d7d-428a-9418-70354eeb86ef';
 
+
 app.get('/', async (req, res) => {
 	res.send('Hello there!');
 });
+
 
 app.get('/show', async (req, res) => {
   try {
@@ -18,6 +20,7 @@ app.get('/show', async (req, res) => {
     res.status(500).send('Something went wrong');
   }
 });
+
 
 app.get('/achievement', async (req, res) => {
   try {
@@ -30,6 +33,7 @@ app.get('/achievement', async (req, res) => {
   }
 });
 
+
 app.get('/greet', async (req, res) => {
   try {
     const response = await axios.get(API_URL);
@@ -40,6 +44,7 @@ app.get('/greet', async (req, res) => {
     res.status(500).send('Something went wrong');
   }
 });
+
 
 app.listen(3001, () => {
   console.log('Server listening on port 3001');
